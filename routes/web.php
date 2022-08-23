@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/folders/{id}/tasks', 'App\Http\Controllers\TaskController@index')->name('tasks.index');
 Route::get('/folders/create', 'App\Http\Controllers\FolderController@showCreateForm')->name('folders.create');
 Route::post('/folders/create', 'App\Http\Controllers\FolderController@create');
